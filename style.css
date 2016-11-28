@@ -6,3 +6,7 @@ body	{
 	width: 20%;
 	min-width: 100px;
 }
+
+#new-song-file	{
+	visibility: hidden;
+}

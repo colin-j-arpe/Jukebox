@@ -10,6 +10,7 @@ var pauseButton = document.getElementsByClassName("button")[1];
 var volumeUpButton = document.getElementsByClassName("button")[2];
 var volumeDownButton = document.getElementsByClassName("button")[3];
 var songMenu = document.getElementById("song-menu");
+var userSong = document.getElementById("new-song-file");
 
 playButton.addEventListener ("click", function () { player.play() });
 // playButton.addEventListener ("click", function () {alert("button works")});
@@ -52,6 +53,18 @@ function loadSong ()	{
 	}
 
 }
+
+function newSong ()	{
+	userSong.click();
+// console.log(document.getElementById("new-song-file").value);
+	userSong.addEventListener("change", function ()	{
+		player.src = document.getElementById("new-song-file").files[0];
+// console.log(document.getElementById("new-song-file").files[0]);
+	});
+
+}
+
+// userSong.addEventListener ("input", )
 
 function Playlist (title)	{
 	this.title = title;
