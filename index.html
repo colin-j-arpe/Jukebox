@@ -3,13 +3,21 @@
 <head>
 	<title>Jukebox Starter Kit</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div id="audio">
+	<div class="audio">
 		<audio id="player" src="Assets/Audio/Year Of Birds - Slack Handfuls of Nothing - 01 Foreign Habits.mp3">
 		</audio>
 	</div>
+
+	<div class="audio">
+		<audio id="sc-player" src="" controls>
+		</audio>
+	</div>
+
 	<div class="controls">
 		<img class="button" src="Assets/Images/play-button.jpg">
 		<img class="button" src="Assets/Images/pause-button.jpg">
