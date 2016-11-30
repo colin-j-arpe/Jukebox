@@ -2,67 +2,207 @@ var players = document.getElementsByClassName("song-player");
 var titles = document.getElementsByClassName("song-title");
 var artists = document.getElementsByClassName("artist-name");
 var buttons = document.getElementsByClassName("button");
-var trackList = ["227994210", "266855447", "240957653", "133580206", "189752207", "147961911"]
+
+var trackList = ["227994210", "266855447", "240957653", "133580206", "189752207", "147961911"];
+
+for (var i = 0; i < trackList.length; i++) {
+	players[i].style.display = "inline-block";
+}
 
 var trackIDstring = "/tracks/" + trackList[0];
-	SC.stream (trackIDstring).then(function(player) {
-		buttons[0].addEventListener ("click", function () {player.play()});
-		buttons[1].addEventListener ("click", function () {player.pause()});
-		buttons[2].addEventListener ("click", function () {player.volumeUp()});	
-		buttons[3].addEventListener ("click", function () {player.volumeDown()});
-	});
+SC.stream (trackIDstring).then(function(player) {
+	buttons[0].addEventListener ("click", function () {player.play()});
+	buttons[1].addEventListener ("click", function () {player.pause()});
+});
 
 var trackIDstring = "/tracks/" + trackList[1];
-	SC.stream (trackIDstring).then(function(player) {
-		buttons[4].addEventListener ("click", function () {player.play()});
-		buttons[5].addEventListener ("click", function () {player.pause()});
-		buttons[6].addEventListener ("click", function () {player.volumeUp()});	
-		buttons[7].addEventListener ("click", function () {player.volumeDown()});
-	});
+SC.stream (trackIDstring).then(function(player) {
+	buttons[4].addEventListener ("click", function () {player.play()});
+	buttons[5].addEventListener ("click", function () {player.pause()});
+});
 
 var trackIDstring = "/tracks/" + trackList[2];
-	SC.stream (trackIDstring).then(function(player) {
-		buttons[8].addEventListener ("click", function () {player.play()});
-		buttons[9].addEventListener ("click", function () {player.pause()});
-		buttons[10].addEventListener ("click", function () {player.volumeUp()});	
-		buttons[11].addEventListener ("click", function () {player.volumeDown()});
-	});
+SC.stream (trackIDstring).then(function(player) {
+	buttons[8].addEventListener ("click", function () {player.play()});
+	buttons[9].addEventListener ("click", function () {player.pause()});
+});
 
 var trackIDstring = "/tracks/" + trackList[3];
-	SC.stream (trackIDstring).then(function(player) {
-		buttons[12].addEventListener ("click", function () {player.play()});
-		buttons[13].addEventListener ("click", function () {player.pause()});
-		buttons[14].addEventListener ("click", function () {player.volumeUp()});	
-		buttons[15].addEventListener ("click", function () {player.volumeDown()});
-	});
+SC.stream (trackIDstring).then(function(player) {
+	buttons[12].addEventListener ("click", function () {player.play()});
+	buttons[13].addEventListener ("click", function () {player.pause()});
+});
 
 var trackIDstring = "/tracks/" + trackList[4];
-	SC.stream (trackIDstring).then(function(player) {
-		buttons[16].addEventListener ("click", function () {player.play()});
-		buttons[17].addEventListener ("click", function () {player.pause()});
-		buttons[18].addEventListener ("click", function () {player.volumeUp()});	
-		buttons[19].addEventListener ("click", function () {player.volumeDown()});
-	});
+SC.stream (trackIDstring).then(function(player) {
+	buttons[16].addEventListener ("click", function () {player.play()});
+	buttons[17].addEventListener ("click", function () {player.pause()});
+});
 
 var trackIDstring = "/tracks/" + trackList[5];
-	SC.stream (trackIDstring).then(function(player) {
-		buttons[20].addEventListener ("click", function () {player.play()});
-		buttons[21].addEventListener ("click", function () {player.pause()});
-		buttons[22].addEventListener ("click", function () {player.volumeUp()});	
-		buttons[23].addEventListener ("click", function () {player.volumeDown()});
-	});
+SC.stream (trackIDstring).then(function(player) {
+	buttons[20].addEventListener ("click", function () {player.play()});
+	buttons[21].addEventListener ("click", function () {player.pause()});
+});
+
+
+// function Jukebox (trackIDs) {
+// 	if (trackIDs.length > 12) trackIDs.length = 12;
+// 	this.trackStrings = [];
+// 	for (var i = 0; i < trackIDs.length; i++) {
+// 		var b = [];
+// 		for (var j = 0; j < 4; j++)	{
+// 			b[j] = 4 * i + j;
+// 		}
+// 		this.trackStrings[i] = "/tracks/" + trackIDs[i];
+// 		players[i].style.display = "inline-block";
+// 		SC.stream (this.trackStrings[i]). then (function (player) {
+// 			buttons[b[0]].addEventListener ("click", function () {
+// 				player.play();
+// 			});
+// 			buttons[b[1]].addEventListener ("click", function () {
+// 				player.pause();
+// 			});
+// 		});
+// 	}
+// // 	this.play = function (index)	{
+// // 		SC.stream (this.trackStrings[index]).then (function (player) {
+// // 			buttons[index].addEventListener ("click", function () {
+// // 	myJukebox.play (0);
+// // });
+
+// // 			// player.play ();
+// // 			buttons[index+1].addEventListener ("click", function ()	{
+// // 				player.pause ();
+// // 			});
+// // 		});
+// // 	}
+// // 	this.pause = function (index)	{
+// // 		SC.stream (this.trackStrings[index]).then (function (player) {player.pause ()});
+// // 	}
+// };
+
+// var myJukebox = new Jukebox (trackList);
+
+// for (var i = 0; i < myJukebox.trackStrings.length; i++) {
+// 	players[i].style.display = "inline-block";
+// 	buttons[i*4].addEventListener ("click", function () {myJukebox.play (i) });
+// 	buttons[i*4+1].addEventListener ("click", function () {myJukebox.pause (i) });
+// };
+
+
+// players[i].style.display = "inline-block";
+
+// for (var i = 0; i < myJukebox.trackStrings.length; i+=4) {
+// 	buttons[i].addEventListener ("click", function () {
+// 	myJukebox.play (i/4);
+// });
+
+// }
+
+
+// buttons[0].addEventListener ("click", function () {
+// 	myJukebox.play (0);
+// });
+	// buttons[1].addEventListener ("click", function () {
+// 	console.log(i);
+// 	myJukebox.pause (0)
+// });
+
+// players[1].style.display = "inline-block";
+// buttons[4].addEventListener ("click", function () {myJukebox.play (i) });
+// buttons[5].addEventListener ("click", function () {myJukebox.pause (i) });
+
+// players[2].style.display = "inline-block";
+// buttons[8].addEventListener ("click", function () {myJukebox.play (i) });
+// buttons[9].addEventListener ("click", function () {myJukebox.pause (i) });
+
+// players[3].style.display = "inline-block";
+// buttons[12].addEventListener ("click", function () {myJukebox.play (i) });
+// buttons[13].addEventListener ("click", function () {myJukebox.pause (i) });
+
+// players[4].style.display = "inline-block";
+// buttons[16].addEventListener ("click", function () {myJukebox.play (i) });
+// buttons[17].addEventListener ("click", function () {myJukebox.pause (i) });
+
+// players[5].style.display = "inline-block";
+// buttons[20].addEventListener ("click", function () {myJukebox.play (i) });
+// buttons[21].addEventListener ("click", function () {myJukebox.pause (i) });
+
+// var i = 0;
+// var b1 = i*4+0;
+// var b2 = i*4+1;
+// var b3 = i*4+2;
+// var b4 = i*4+3;
+
+// var trackIDstring = "/tracks/" + trackList[i];
+// 	SC.stream (trackIDstring).then(function(player) {
+// 		buttons[b1].addEventListener ("click", function () {player.play()});
+// 		buttons[b2].addEventListener ("click", function () {player.pause()});
+// 		buttons[b3].addEventListener ("click", function () {player.volumeUp()});	
+// 		buttons[b4].addEventListener ("click", function () {player.volumeDown()});
+// 	});
+
+// i = 1;
+// var trackIDstring = "/tracks/" + trackList[i];
+// 	SC.stream (trackIDstring).then(function(player) {
+// 		buttons[4].addEventListener ("click", function () {player.play()});
+// 		buttons[5].addEventListener ("click", function () {player.pause()});
+// 		buttons[6].addEventListener ("click", function () {player.volumeUp()});	
+// 		buttons[7].addEventListener ("click", function () {player.volumeDown()});
+// 	});
+
+// i = 2;
+// var trackIDstring = "/tracks/" + trackList[i];
+// 	SC.stream (trackIDstring).then(function(player) {
+// 		buttons[(i*4)+0].addEventListener ("click", function () {player.play()});
+// 		buttons[(i*4)+1].addEventListener ("click", function () {player.pause()});
+// 		buttons[(i*4)+2].addEventListener ("click", function () {player.volumeUp()});	
+// 		buttons[(i*4)+3].addEventListener ("click", function () {player.volumeDown()});
+// 	});
+
+// i = 3;
+// var trackIDstring = "/tracks/" + trackList[i];
+// 	SC.stream (trackIDstring).then(function(player) {
+// 		buttons[12].addEventListener ("click", function () {player.play()});
+// 		buttons[13].addEventListener ("click", function () {player.pause()});
+// 		buttons[14].addEventListener ("click", function () {player.volumeUp()});	
+// 		buttons[15].addEventListener ("click", function () {player.volumeDown()});
+// 	});
+
+// i = 4;
+// var trackIDstring = "/tracks/" + trackList[i];
+// 	SC.stream (trackIDstring).then(function(player) {
+// 		buttons[(4*i)+0].addEventListener ("click", function () {player.play()});
+// 		buttons[(4*i)+1].addEventListener ("click", function () {player.pause()});
+// 		buttons[(4*i)+2].addEventListener ("click", function () {player.volumeUp()});	
+// 		buttons[(4*i)+3].addEventListener ("click", function () {player.volumeDown()});
+// 	});
+
+// i = 5;
+// var trackIDstring = "/tracks/" + trackList[i];
+// 	SC.stream (trackIDstring).then(function(player) {
+// 		buttons[(4*i)+0].addEventListener ("click", function () {player.play()});
+// 		buttons[(4*i)+1].addEventListener ("click", function () {player.pause()});
+// 		buttons[(4*i)+2].addEventListener ("click", function () {player.volumeUp()});	
+// 		buttons[(4*i)+3].addEventListener ("click", function () {player.volumeDown()});
+// 	});
 
 // var tracks = [];
 
 // for (var i = 0; i < trackList.length; i++) {
+// 	var b1 = i*4+0;
+// 	var b2 = i*4+1;
+// 	var b3 = i*4+2;
+// 	var b4 = i*4+3;
 // 	var trackIDstring = "/tracks/" + trackList[i];
 // 	// var track = SC.get (trackIDstring);
 // 	// titles[i].innerText = track.title;
-// 	tracks[i] = SC.stream (trackIDstring).then(function(player) {
-// 		buttons[(4 * i) + 0].addEventListener ("click", function () {player.play()});
-// 		buttons[(4 * i) + 1].addEventListener ("click", function () {player.pause()});
-// 		buttons[(4 * i) + 2].addEventListener ("click", function () {player.volumeUp()});	
-// 		buttons[(4 * i) + 3].addEventListener ("click", function () {player.volumeDown()});
+// 	SC.stream (trackIDstring).then(function(player) {
+// 		buttons[b1].addEventListener ("click", function () {player.play()});
+// 		buttons[b2].addEventListener ("click", function () {player.pause()});
+// 		buttons[b3].addEventListener ("click", function () {player.volumeUp()});	
+// 		buttons[b4].addEventListener ("click", function () {player.volumeDown()});
 // 	});
 // }
 

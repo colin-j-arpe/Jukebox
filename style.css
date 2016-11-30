@@ -5,7 +5,7 @@ body	{
 .song-player	{
 /*	height:	400px;
 	width: 500px;
-*/	display: inline-block;
+*/	display: none;
 	background-color: #c0c0c0;
 	padding: 10px;
 	border: 1px solid black;
