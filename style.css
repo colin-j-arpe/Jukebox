@@ -2,11 +2,49 @@ body	{
 	background-color: #808080;
 }
 
-.button	{
-	width: 20%;
-	min-width: 100px;
+.song-player	{
+/*	height:	400px;
+	width: 500px;
+*/	display: inline-block;
+	background-color: #c0c0c0;
+	padding: 10px;
+	border: 1px solid black;
+	margin: 10px;
 }
 
-#new-song-file	{
-	visibility: hidden;
+h2	{
+	margin-top: 0;
+	margin-bottom: 0;
 }
+
+h3	{
+	margin-top: 0;
+}
+
+.button	{
+	width: 100px;
+	height: 66px;
+	display: inline-block;
+	background-size: 100%;
+
+}
+
+.button:nth-of-type(4n+1)	{
+	background-image: url(Assets/Images/play-button.jpg);
+}
+
+.button:nth-of-type(4n+2)	{
+	background-image: url(Assets/Images/pause-button.jpg);
+}
+
+.button:nth-of-type(4n+3)	{
+	background-image: url(Assets/Images/volume-up-button.jpg);
+}
+
+.button:nth-of-type(4n+0)	{
+	background-image: url(Assets/Images/volume-down-button.jpg);
+}
+
+/*#new-song-file	{
+	visibility: hidden;
+}*/
