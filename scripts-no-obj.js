@@ -5,7 +5,7 @@ var genres = document.getElementsByClassName("genre-name");
 var artLinks = document.getElementsByClassName("artwork-link");
 var artPics = document.getElementsByClassName("song-image");
 var buttons = document.getElementsByClassName("button");
-var userLinks = document.getElementsByClassName("user-links");
+var userLinks = document.getElementsByClassName("user-link");
 var userPics = document.getElementsByClassName("user-image");
 
 var trackList = ["227994210", "266855447", "240957653", "133580206", "189752207", "147961911"];
@@ -49,7 +49,13 @@ function addMusic (list, index)	{
 		buttons[(index*6)+4].addEventListener ("click", function () {
 			if (player.getVolume() > 0) player.setVolume (player.getVolume() - 0.1);
 		});
-		buttons[(index*6)+5].addEventListener ("click", function () {player.setVolume (0)});
+		buttons[(index*6)+5].addEventListener ("click", function () {
+			if (player.getVolume() > 0)	{
+				player.setVolume (0);
+			}	else 	{
+				player.setVolume (0.5);
+			}
+		});
 		if (index < list.length-1)	{
 console.log("next song " + index);
 			addMusic (list, index+1);

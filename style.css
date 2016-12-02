@@ -4,9 +4,9 @@ body	{
 }
 
 .song-player	{
-/*	height:	400px;
-	width: 500px;
-*/	display: none;
+	/*height:	400px;*/
+	width: 300px;
+	display: none;
 	background-color: #c0c0c0;
 	padding: 10px;
 	border: 1px solid black;
@@ -16,6 +16,7 @@ body	{
 h2	{
 	margin-top: 0;
 	margin-bottom: 0;
+	overflow: hidden;
 }
 
 h3	{
@@ -55,46 +56,51 @@ h3	{
 }
 
 .button	{
-	width: 40px;
-	height: 40px;
+	width: 24px;
+	height: 24px;
 	display: inline-block;
 	background-size: 100%;
-	margin-left: 5px;
+	margin-top: 8px;
+	margin-left: 12px;
+	fill: #d0d0d0;
 }
 
 .button:nth-of-type(6n+1)	{
-	background-image: url(Assets/Images/play-button.jpg);
+	background-image: url(Assets/Images/play-button.svg);
 }
 
 .button:nth-of-type(6n+2)	{
-	background-image: url(Assets/Images/pause-button.jpg);
+	background-image: url(Assets/Images/pause-button.svg);
 }
 
 .button:nth-of-type(6n+3)	{
-	background-image: url(Assets/Images/volume-up-button.jpg);
+	background-image: url(Assets/Images/stop-button.svg);
 }
 
 .button:nth-of-type(6n+4)	{
-	background-image: url(Assets/Images/volume-up-button.jpg);
+	background-image: url(Assets/Images/volume-up.svg);
 }
 
 .button:nth-of-type(6n+5)	{
-	background-image: url(Assets/Images/volume-up-button.jpg);
+	background-image: url(Assets/Images/volume-down.svg);
 }
 
 .button:nth-of-type(6n+0)	{
-	background-image: url(Assets/Images/volume-down-button.jpg);
+	background-image: url(Assets/Images/mute-button.svg);
+}
+
+.user-icon	{
+	text-align: right;
+	display: inline;
 }
 
 .user-image	{
-/*	float: right;
-	display: inline;
-*/	width: 40px;
-	margin-left: 5px;
+	width: 40px;
+	margin-left: 40px;
 }
 
 .user-link:hover	{
-	opacity: 0.7;
+	opacity: 0.5;
 }
 
 /*#new-song-file	{
