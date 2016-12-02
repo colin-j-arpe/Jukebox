@@ -1,5 +1,6 @@
 body	{
 	background-color: #808080;
+	color: #202020;
 }
 
 .song-player	{
@@ -19,30 +20,81 @@ h2	{
 
 h3	{
 	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.link-text	{
+	text-decoration: none;
+	color: #202020;
+}	
+
+.link-text:hover	{
+	color: #606060;
+}
+
+.artwork 	{
+	text-align: center;
+}
+
+.song-image	{
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+.artwork-link:hover	{
+	opacity: 0.7;
+}
+
+.song-footer	{
+	display: inline-block;
+}
+
+.controls	{
+	display: flex;
+	justify-content: center;
 }
 
 .button	{
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	display: inline-block;
 	background-size: 100%;
-
+	margin-left: 5px;
 }
 
-.button:nth-of-type(4n+1)	{
+.button:nth-of-type(6n+1)	{
 	background-image: url(Assets/Images/play-button.jpg);
 }
 
-.button:nth-of-type(4n+2)	{
+.button:nth-of-type(6n+2)	{
 	background-image: url(Assets/Images/pause-button.jpg);
 }
 
-.button:nth-of-type(4n+3)	{
+.button:nth-of-type(6n+3)	{
 	background-image: url(Assets/Images/volume-up-button.jpg);
 }
 
-.button:nth-of-type(4n+0)	{
+.button:nth-of-type(6n+4)	{
+	background-image: url(Assets/Images/volume-up-button.jpg);
+}
+
+.button:nth-of-type(6n+5)	{
+	background-image: url(Assets/Images/volume-up-button.jpg);
+}
+
+.button:nth-of-type(6n+0)	{
 	background-image: url(Assets/Images/volume-down-button.jpg);
+}
+
+.user-image	{
+/*	float: right;
+	display: inline;
+*/	width: 40px;
+	margin-left: 5px;
+}
+
+.user-link:hover	{
+	opacity: 0.7;
 }
 
 /*#new-song-file	{

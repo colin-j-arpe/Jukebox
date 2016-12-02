@@ -1,7 +1,12 @@
 var players = document.getElementsByClassName("song-player");
 var titles = document.getElementsByClassName("song-title");
+var songLinks = document.getElementsByClassName("title-link");
 var genres = document.getElementsByClassName("genre-name");
+var artLinks = document.getElementsByClassName("artwork-link");
+var artPics = document.getElementsByClassName("song-image");
 var buttons = document.getElementsByClassName("button");
+var userLinks = document.getElementsByClassName("user-links");
+var userPics = document.getElementsByClassName("user-image");
 
 var trackList = ["227994210", "266855447", "240957653", "133580206", "189752207", "147961911"];
 
@@ -15,7 +20,12 @@ function buildPlayers (list, index)	{
 	var trackIDstring = "/tracks/" + list[index];
 	SC.get (trackIDstring).then (function (reply) {
 		titles[index].innerText = reply.title;
+		songLinks[index].href = reply.permalink_url;
 		genres[index].innerText = reply.genre;
+		artPics[index].src = reply.artwork_url;
+		artLinks[index].href = reply.permalink_url;
+		userPics[index].src = reply.user.avatar_url;
+		userLinks[index].href = reply.user.permalink_url;
 		if (index < list.length-1)	{
 console.log("running again " + index);
 			buildPlayers (list, index+1);
@@ -27,14 +37,19 @@ console.log("running again " + index);
 function addMusic (list, index)	{
 	var trackIDstring = "/tracks/" + list[index];
 	SC.stream (trackIDstring).then(function(player) {
-		buttons[(index*4)+0].addEventListener ("click", function () {player.play()});
-		buttons[(index*4)+1].addEventListener ("click", function () {player.pause()});
-		buttons[(index*4)+2].addEventListener ("click", function () {
+		buttons[(index*6)+0].addEventListener ("click", function () {player.play()});
+		buttons[(index*6)+1].addEventListener ("click", function () {player.pause()});
+		buttons[(index*6)+2].addEventListener ("click", function () {
+			player.pause();
+			player.seek(0);
+		});
+		buttons[(index*6)+3].addEventListener ("click", function () {
 			if (player.getVolume() < 1) player.setVolume (player.getVolume() + 0.1);
 		});
-		buttons[(index*4)+3].addEventListener ("click", function () {
+		buttons[(index*6)+4].addEventListener ("click", function () {
 			if (player.getVolume() > 0) player.setVolume (player.getVolume() - 0.1);
 		});
+		buttons[(index*6)+5].addEventListener ("click", function () {player.setVolume (0)});
 		if (index < list.length-1)	{
 console.log("next song " + index);
 			addMusic (list, index+1);
