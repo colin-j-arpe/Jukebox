@@ -8,7 +8,7 @@ var buttons = document.getElementsByClassName("button");
 var userLinks = document.getElementsByClassName("user-link");
 var userPics = document.getElementsByClassName("user-image");
 
-var trackList = ["227994210", "266855447", "240957653", "133580206", "189752207", "147961911"];
+var trackList = ["227994210", "266855447", "240957653", "133580206", "189752207", "147961911", "79470361", "286692523", "26970282", "284958565"];
 
 if (trackList.length > 12) {trackList.length = 12;}
 
